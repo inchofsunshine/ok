@@ -15,12 +15,12 @@ import java.lang.reflect.Method;
  * 版本：V1.0
  */
 
-public class ExToast {
+ public class ExToast {
     private static final String TAG = "ExToast";
 
-    public static final int LENGTH_ALWAYS = 0;
-    public static final int LENGTH_SHORT = 2;
-    public static final int LENGTH_LONG = 4;
+    private static final int LENGTH_ALWAYS = 0;
+    private static final int LENGTH_SHORT = 2;
+    private static final int LENGTH_LONG = 4;
 
     private Toast toast;
     private Context mContext;
@@ -33,7 +33,7 @@ public class ExToast {
 
     private Handler handler = new Handler();
 
-    public ExToast(Context context) {
+    private ExToast(Context context) {
         this.mContext = context;
         if (toast == null) {
             toast = new Toast(mContext);
