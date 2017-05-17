@@ -137,7 +137,7 @@ public class ExToast {
         ExToast exToast = new ExToast(context);
         exToast.toast = toast;
         exToast.mDuration = duration;
-
+        exToast.show();
         return exToast;
     }
 

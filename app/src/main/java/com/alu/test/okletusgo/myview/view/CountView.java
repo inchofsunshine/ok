@@ -73,7 +73,6 @@ public class CountView extends View {
         float textWidth = mBounds.width();
         float textHeight = mBounds.height();
         canvas.drawText(text, getWidth() / 2 - textWidth / 2, getHeight() / 2 + textHeight / 2, mPaint);
-
     }
 
     private class MyTask extends TimerTask {
@@ -118,6 +117,7 @@ public class CountView extends View {
         }
 
     }
+
 
     private Handler handler = new Handler() {
         @Override
