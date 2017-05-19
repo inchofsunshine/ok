@@ -49,28 +49,14 @@ public class CustomView extends View {
     public CustomView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         TypedArray td = context.getTheme().obtainStyledAttributes(attrs, R.styleable.CustomTitleView, defStyleAttr, 0);
-        int n = td.getIndexCount();
-        for (int i = 0; i < n; i++) {
-            int attr = td.getIndex(i);
-            switch (attr) {
-                case R.styleable.CustomTitleView_titleText:
-                    mTitleText = td.getString(attr);
-                    break;
-                case R.styleable.CustomTitleView_titleTextColor:
-                    mTitleTextColor = td.getColor(attr, Color.BLACK);
-                    break;
-                case R.styleable.CustomTitleView_titleTextSize:
-                    mTitleTextSize = td.getDimensionPixelSize(attr,
-                            (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 16,
-                                    getResources().getDisplayMetrics()));
-                    break;
-
-            }
-        }
+        mTitleText = td.getString(R.styleable.CustomTitleView_titleText);
+        mTitleTextColor = td.getColor(R.styleable.CustomTitleView_titleTextColor, Color.BLACK);
+        mTitleTextSize = td.getDimensionPixelSize(R.styleable.CustomTitleView_titleTextSize,
+                (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, 16,
+                        getResources().getDisplayMetrics()));
         td.recycle();
         mPaint = new Paint();
         mPaint.setTextSize(mTitleTextSize);
-//        mPaint.setColor(mTitleTextColor);
         mBound = new Rect();
         mPaint.getTextBounds(mTitleText, 0, mTitleText.length(), mBound);
     }
@@ -90,7 +76,7 @@ public class CustomView extends View {
             width = (int) (getPaddingLeft() + textWidth + getPaddingRight());
         }
         if (heightMode == MeasureSpec.EXACTLY) {
-            height = getPaddingTop() + getPaddingBottom() +heightSize;
+            height = getPaddingTop() + getPaddingBottom() + heightSize;
         } else {
             float textHeight = mBound.height();
             height = (int) (getPaddingTop() + textHeight + getPaddingBottom());
@@ -100,9 +86,9 @@ public class CustomView extends View {
 
     @Override
     protected void onDraw(Canvas canvas) {
-        mPaint.setColor(Color.BLUE);
+        mPaint.setColor(Color.GRAY);
         canvas.drawRect(0, 0, getMeasuredWidth(), getMeasuredHeight(), mPaint);
-        mPaint.setColor(Color.RED);
+        mPaint.setColor(mTitleTextColor);
         canvas.drawText(mTitleText, getWidth() / 2 - mBound.width() / 2, getHeight() / 2 + mBound.height() / 2, mPaint);
     }
 }
