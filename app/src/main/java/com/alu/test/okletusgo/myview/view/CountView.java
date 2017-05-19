@@ -10,6 +10,7 @@ import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 import com.alu.test.okletusgo.R;
 
@@ -44,6 +45,14 @@ public class CountView extends View {
         setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
+            }
+        });
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN:
                 if (isRunning) {
                     timer.cancel();
                     timer.purge();
@@ -56,9 +65,9 @@ public class CountView extends View {
                     timer.schedule(myTask, 0, 10);
                 }
                 isRunning = !isRunning;
-
-            }
-        });
+                break;
+        }
+        return false;
     }
 
     @Override
