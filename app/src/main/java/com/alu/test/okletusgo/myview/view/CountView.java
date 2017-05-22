@@ -10,6 +10,7 @@ import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import com.alu.test.okletusgo.R;
@@ -33,7 +34,6 @@ public class CountView extends View {
     private boolean isRunning = false;
     private Timer timer;
     private StringBuffer stringBuffer;
-    private MyTask myTask;
 
     public CountView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
@@ -42,22 +42,17 @@ public class CountView extends View {
         mPaint = new Paint();
         stringBuffer = new StringBuffer();
         stringBuffer.append("00:00:00:00");
-        setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            }
-        });
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()){
             case MotionEvent.ACTION_DOWN:
+                MyTask myTask;
                 if (isRunning) {
                     timer.cancel();
                     timer.purge();
                     timer = null;
-                    myTask = null;
                     System.gc();
                 } else {
                     timer = new Timer();
@@ -123,10 +118,15 @@ public class CountView extends View {
             else
                 stringBuffer.append(millisecond);
             handler.sendEmptyMessage(0);
+//            Log.d("lbw",stringBuffer.toString());
         }
 
     }
 
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
+    }
 
     private Handler handler = new Handler() {
         @Override

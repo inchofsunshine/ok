@@ -94,7 +94,7 @@ public class LoginFragment extends BaseFragment {
         });
         registerPage.show(getContext());
 
-//不适用GUI接口
+//不使用GUI接口
 //        SMSSDK.getSupportedCountries(); //获取短信目前支持的国家列表，在监听中返回
 //
 //        SMSSDK.getVerificationCode("country", "phone");  //请求获取短信验证码，在监听中返回
