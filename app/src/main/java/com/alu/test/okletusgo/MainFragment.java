@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.alu.test.okletusgo.base.BaseFragment;
+import com.alu.test.okletusgo.kotlin.KotlinActivity;
 import com.alu.test.okletusgo.myview.MyViewActivity;
 
 /**
@@ -41,6 +42,12 @@ public class MainFragment extends BaseFragment {
                 data.putString("username", "lubowen");
                 intent.putExtras(data);
                 startActivity(intent);
+            }
+        });
+        view.findViewById(R.id.btn_go_kotlin_activity).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), KotlinActivity.class));
             }
         });
     }

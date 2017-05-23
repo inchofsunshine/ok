@@ -29,4 +29,9 @@
         android:id="@+id/btn_viewId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+    <Button
+        android:text="btn_go_kotlin_activity"
+        android:id="@+id/btn_go_kotlin_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 </LinearLayout>
