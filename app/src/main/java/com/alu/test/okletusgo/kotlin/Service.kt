@@ -28,6 +28,12 @@ object Service {
 
 fun main(args: Array<String>) {
     var i: Int = 0
-    Service.gitHubService.getStarGazers().execute().body()?.map { println(it); i++ }
-    println(i)
+    Service.gitHubService
+            .getStarGazers()
+            .execute()
+            .body()
+            ?.map { println(it)
+        i++
+        println() }
+            ?.size
 }
