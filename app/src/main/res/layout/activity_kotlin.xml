@@ -4,9 +4,32 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.alu.test.okletusgo.kotlin.KotlinActivity">
+
     <TextView
+        android:id="@+id/tv_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+
         android:layout_gravity="center"
-        android:text="Hello Kotlin!"/>
+        android:text="Hello Kotlin!" />
+
+    <EditText
+        android:id="@+id/et_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/et_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:text="Hello Kotlin!" />
 </FrameLayout>

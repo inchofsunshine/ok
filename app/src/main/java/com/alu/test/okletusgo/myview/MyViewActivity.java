@@ -12,7 +12,6 @@ import com.alu.test.okletusgo.base.SGActivity;
  */
 
 public class MyViewActivity extends SGActivity {
-
     @Override
     public BaseFragment getFirstFragment() {
         return MyViewFragment.newInstance();
@@ -21,5 +20,6 @@ public class MyViewActivity extends SGActivity {
     public static void actionStart(Context context) {
         Intent intent = new Intent(context, MyViewActivity.class);
         context.startActivity(intent);
+
     }
 }
