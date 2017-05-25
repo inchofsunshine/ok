@@ -7,6 +7,6 @@ import com.alu.test.okletusgo.base.SGActivity;
 public class MainActivity extends SGActivity {
     @Override
     public BaseFragment getFirstFragment() {
-        return MainFragment.Companion.newInstance();
+        return MainFragment.newInstance();
     }
 }
