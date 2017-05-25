@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 
 import com.alu.test.okletusgo.R
+import com.spark.kotlindemo.FilePath
 import kotlinx.android.synthetic.main.activity_kotlin.*
 
 class KotlinActivity : AppCompatActivity() {
@@ -19,6 +20,8 @@ class KotlinActivity : AppCompatActivity() {
         btn_1.setOnClickListener {
             if(et_1.text.toString().isNotEmpty()&&et_2.text.toString().isNotEmpty())
                 tv_1.text = getMax(et_1.text.toString().toInt(), (et_2.text.toString().toInt())).toString()
+            println(KotlinActivity::class.java)
+            println(FilePath.javaClass.toString())
         }
     }
     /**

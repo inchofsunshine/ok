@@ -30,6 +30,14 @@ fun main(args: Array<String>) {
                 println(it)
             }
             ?.size.toString().plus("人star"))
+
+
+
+
+
+
+
+
 //    /**
 //     * 打印 1 2 3 4 5
 //     */
