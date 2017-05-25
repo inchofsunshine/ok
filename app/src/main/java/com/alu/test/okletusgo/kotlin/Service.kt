@@ -22,27 +22,22 @@ object Service {
 }
 
 fun main(args: Array<String>) {
-    print(Service.gitHubService
-            .getStarGazers()
-            .execute()
-            .body()
-            ?.map {
-                println(it)
-            }
-            ?.size.toString().plus("人star"))
+    print(
+            Service.gitHubService
+                    .getStarGazers()
+                    .execute()
+                    .body()
+                    ?.map {
+                        println(it)
+                    }
+                    ?.size.toString().plus("人star"))
+}
 
-
-
-
-
-
-
-
-//    /**
-//     * 打印 1 2 3 4 5
-//     */
-//    for (x in 1..5){
+/**
+ * 打印 1 2 3 4 5
+ */
+//fun print1_5() {
+//    for (x in 1..5) {
 //        println(x)
 //    }
-
-}
+//}
