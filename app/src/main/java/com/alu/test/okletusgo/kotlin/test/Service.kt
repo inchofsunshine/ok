@@ -1,9 +1,5 @@
-package com.alu.test.okletusgo.kotlin
+package com.alu.test.okletusgo.kotlin.test
 
-
-import com.alu.test.okletusgo.kotlin.inter.GitHubService
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 
 /**
  * Created by Alu on 2017/5/24.
@@ -12,18 +8,18 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 
 object Service {
-    val gitHubService: GitHubService by lazy {
-        Retrofit.Builder()
+    val gitHubService: com.alu.test.okletusgo.kotlin.inter.GitHubService by lazy {
+        retrofit2.Retrofit.Builder()
                 .baseUrl("https://api.github.com")
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(retrofit2.converter.gson.GsonConverterFactory.create())
                 .build()
-                .create(GitHubService::class.java)
+                .create(com.alu.test.okletusgo.kotlin.inter.GitHubService::class.java)
     }
 }
 
 fun main(args: Array<String>) {
     print(
-            Service.gitHubService
+            com.alu.test.okletusgo.kotlin.test.Service.gitHubService
                     .getStarGazers()
                     .execute()
                     .body()
@@ -32,6 +28,17 @@ fun main(args: Array<String>) {
                     }
                     ?.size.toString().plus("人star"))
 }
+
+
+
+
+
+
+
+
+
+
+
 
 /**
  * 打印 1 2 3 4 5

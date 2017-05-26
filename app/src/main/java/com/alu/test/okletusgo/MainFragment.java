@@ -5,7 +5,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.alu.test.okletusgo.base.BaseFragment;
-import com.alu.test.okletusgo.kotlin.KotlinActivity;
+import com.alu.test.okletusgo.kotlin.SecondKotlinActivity;
+import com.alu.test.okletusgo.kotlin.test.KotlinActivity;
 import com.alu.test.okletusgo.myview.MyViewActivity;
 
 /**
@@ -33,25 +34,32 @@ public class MainFragment extends BaseFragment {
                 MyViewActivity.actionStart(getContext());
             }
         });
-        view.findViewById(R.id.btn_go_third_fragmentId).setOnClickListener(new View.OnClickListener(){
+        view.findViewById(R.id.btn_go_third_fragmentId).setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                Intent intent  = new Intent(getContext(),LoginActivity.class);
+                Intent intent = new Intent(getContext(), LoginActivity.class);
                 Bundle data = new Bundle();
                 data.putString("username", "lubowen");
                 intent.putExtras(data);
                 startActivity(intent);
             }
         });
-        view.findViewById(R.id.btn_go_kotlin_activity).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.btn_go_first_kotlin_activity).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getContext(), KotlinActivity.class));
             }
         });
+        view.findViewById(R.id.btn_go_second_kotlin_fragment).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), SecondKotlinActivity.class));
+            }
+        });
     }
-    public static  MainFragment newInstance(){
+
+    public static MainFragment newInstance() {
         return new MainFragment();
     }
 }

@@ -30,8 +30,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
     <Button
-        android:text="btn_go_kotlin_activity"
-        android:id="@+id/btn_go_kotlin_activity"
+        android:text="btn_go_first_kotlin_activity"
+        android:id="@+id/btn_go_first_kotlin_activity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        android:text="btn_go_second_kotlin_fragment"
+        android:id="@+id/btn_go_second_kotlin_fragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 </LinearLayout>

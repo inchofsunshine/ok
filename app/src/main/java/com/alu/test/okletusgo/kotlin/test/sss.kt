@@ -1,6 +1,4 @@
-package com.alu.test.okletusgo.kotlin
-
-import com.spark.kotlindemo.FilePath
+package com.alu.test.okletusgo.kotlin.test
 
 /**
  * Created by Alu on 2017/5/23.
