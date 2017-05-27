@@ -20,6 +20,5 @@ class SecondKotlinFragment : BaseKotlinFragment() {
     }
 
     override fun init(view: View?, saveInstanceState: Bundle?) {
-        textView.setOnClickListener { textView.text = "My life" }
     }
 }

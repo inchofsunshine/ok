@@ -35,7 +35,7 @@
             android:windowSoftInputMode="stateHidden|adjustResize" />
         <activity android:name=".myview.MyViewActivity" />
         <activity android:name=".kotlin.test.KotlinActivity" />
-        <activity android:name=".kotlin.SecondKotlinActivity"></activity>
+        <activity android:name=".kotlin.SecondKotlinActivity"/>
     </application>
 
 </manifest>
