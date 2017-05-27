@@ -1,4 +1,4 @@
-package com.alu.test.okletusgo.applictaion;
+package com.alu.test.okletusgo.application;
 
 import android.app.Application;
 import android.content.Context;
