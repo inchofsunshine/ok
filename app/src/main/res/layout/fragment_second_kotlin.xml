@@ -19,15 +19,9 @@
 
             <TextView
                 android:id="@+id/message"
+                android:text="@string/hello_kotlin"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-
-            <Button
-                android:id="@+id/nextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:text="测试" />
 
         </LinearLayout>
 

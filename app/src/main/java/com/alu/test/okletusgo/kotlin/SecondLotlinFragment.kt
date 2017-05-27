@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import com.alu.test.okletusgo.R
 import com.alu.test.okletusgo.base.BaseKotlinFragment
-import kotlinx.android.synthetic.main.fragment_second_kotlin.*
 
 /**
  * Created by Alu on 2017/5/26.
