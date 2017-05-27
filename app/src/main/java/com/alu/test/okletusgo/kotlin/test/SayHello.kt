@@ -14,26 +14,26 @@ enum class Lang(val hello: String) {
     }
 
     companion object {
-        fun parse(name: String): com.alu.test.okletusgo.kotlin.test.Lang {
-            return com.alu.test.okletusgo.kotlin.test.Lang.valueOf(name.toUpperCase())
+        fun parse(name: String): Lang {
+            return Lang.valueOf(name.toUpperCase())
         }
     }
 }
 
 fun main(args: Array<String>) {
     if (args.isEmpty()) return
-    val lang = com.alu.test.okletusgo.kotlin.test.Lang.Companion.parse(args[0])
+    val lang = Lang.Companion.parse(args[0])
     println(lang)
     lang.sayHello()
     lang.sayBye()
 }
 
-fun com.alu.test.okletusgo.kotlin.test.Lang.sayBye() {
+fun Lang.sayBye() {
     val bye = when (this) {
 
-        com.alu.test.okletusgo.kotlin.test.Lang.ENGLISH -> "Bye Bye"
-        com.alu.test.okletusgo.kotlin.test.Lang.CHINESE -> "再见"
-        com.alu.test.okletusgo.kotlin.test.Lang.JAPANESE -> "じゃあね"
+        Lang.ENGLISH -> "Bye Bye"
+        Lang.CHINESE -> "再见"
+        Lang.JAPANESE -> "じゃあね"
     }
     print(bye)
 }

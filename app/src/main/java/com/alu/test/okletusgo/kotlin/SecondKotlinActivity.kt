@@ -6,6 +6,6 @@ import com.alu.test.okletusgo.base.SGActivity
 
 open class SecondKotlinActivity : SGActivity() {
     override fun getFirstFragment(): BaseFragment {
-        return SecondKotlinFragment().newInstance()
+        return SecondKotlinFragment.Companion.newInstance()
     }
 }

@@ -11,16 +11,15 @@ import kotlinx.android.synthetic.main.fragment_second_kotlin.*
  * 版本：V1.0
  */
 class SecondKotlinFragment : BaseKotlinFragment() {
-    override fun init(view: View?, saveInstanceState: Bundle?) {
-        textView.setOnClickListener { textView.text = "My life" }
-    }
-
     override fun getLayoutId(): Int {
         return R.layout.fragment_second_kotlin
     }
 
-    fun newInstance(): SecondKotlinFragment {
-        return SecondKotlinFragment()
+    companion object{
+        fun newInstance(): SecondKotlinFragment = SecondKotlinFragment()
     }
 
+    override fun init(view: View?, saveInstanceState: Bundle?) {
+        textView.setOnClickListener { textView.text = "My life" }
+    }
 }
